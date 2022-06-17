@@ -6,26 +6,42 @@ class Game {
   constructor() {
     this.missed = 0;
     this.phrases = [
-      {
-        phrase: "May the force be with you",
-      },
-      {
-        phrase: "There is no place like home",
-      },
-      {
-        phrase: "You are going to need a bigger boat",
-      },
-      {
-        phrase: "I will be back",
-      },
-      {
-        phrase: "I see dead people",
-      },
+      new Phrase("May the force be with you"),
+      ,
+      new Phrase("There is no place like home"),
+      ,
+      new Phrase("You are going to need a bigger boat"),
+      ,
+      new Phrase("I will be back"),
+      ,
+      new Phrase("I see dead people"),
     ];
     this.activePhrase = null;
   }
-  getRandomPhrase () {
-      let random = Math.floor(Math.random() * this.phrases.length);
-      return this.phrases[random]
+  getRandomPhrase() {
+    let random = Math.floor(Math.random() * this.phrases.length);
+    return this.phrases[random];
   }
+
+  startGame() {
+    let overlay = document.getElementById("overlay");
+    overlay.style.display = "none";
+    this.activePhrase = this.getRandomPhrase();
+    this.activePhrase.addPhraseToDisplay();
+  }
+  checkForWin() {
+    const letters = document.querySelectorAll(".hide");
+    if (letters === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  removeLife() {
+    const missedlife = document.querySelectorAll('.tries img');
+
+  }
+
+  gameOver() {}
 }
