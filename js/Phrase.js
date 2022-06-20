@@ -1,7 +1,6 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Phrase.js */
-const ul = document.getElementById("phrase").firstElementChild;
 
 class Phrase {
   constructor(phrase) {
@@ -15,7 +14,6 @@ class Phrase {
 
   addPhraseToDisplay() {
     let phraseLetters = this.phrase.split("");
-    console.log(phraseLetters);
     phraseLetters.forEach((letter) => {
       if (letter === " ") {
         ul.innerHTML += `<li class="space"> </li>`;
@@ -42,7 +40,5 @@ class Phrase {
       }
     }
   }
-
-  //here we need to check the letter selected by the user and determine if it matches the phrase
-  //if it does then display on screen
+  
 }
