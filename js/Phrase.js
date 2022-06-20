@@ -1,7 +1,5 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * Phrase.js */
 
+//Phrase class that sets the blueprint for the phrases
 class Phrase {
   constructor(phrase) {
     this.phrase = phrase.toLowerCase();
@@ -22,7 +20,7 @@ class Phrase {
       }
     });
   }
-
+//this check if the phrase includes a letter in the phrase and returns true if so
   checkLetter(letter) {
     if (this.phrase.includes(letter)) {
       return true;
@@ -31,6 +29,8 @@ class Phrase {
     }
   }
 
+
+//this is a for loop that that shows the letters that match the phrase 
   showMatchedLetter(letter) {
     let phraseLetters = ul.children;
     for (let i = 0; i < phraseLetters.length; i++) {
